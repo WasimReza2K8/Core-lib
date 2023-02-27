@@ -6,8 +6,6 @@ plugins {
     id 'dagger.hilt.android.plugin'
 }
 
-apply from: "$rootDir/buildsystem/generate-module.gradle"
-
 android {
     def androidConfig = rootProject.ext.android
     compileSdk androidConfig.compileSdkVersion
