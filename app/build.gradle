@@ -58,6 +58,8 @@ dependencies {
     implementation libs.com.jakewharton.timber
     debugImplementation libs.com.squareup.leakcanary.android
 
+    testImplementation project(':core-test')
+
     // androidTest
     androidTestImplementation libs.androidx.test.espresso.core
     androidTestImplementation libs.androidx.test.espresso.contrib
