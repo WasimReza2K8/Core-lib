@@ -1,0 +1,42 @@
+plugins {
+    id 'kotlinx-serialization'
+}
+apply from: "$rootDir/buildsystem/android-library.gradle"
+
+android {
+
+    packagingOptions {
+        resources {
+            pickFirsts += ['META-INF/LICENSE.md', 'META-INF/licenses/ASM', 'META-INF/INDEX.LIST', 'META-INF/LICENSE-notice.md']
+        }
+    }
+    namespace 'com.example.core'
+    buildTypes {
+        release {
+            buildConfigField "String", "BASE_URL", "\"https://your_api_url.com\""
+        }
+        debug {
+            buildConfigField "String", "BASE_URL", "\"https://your_api_url.com\""
+        }
+    }
+}
+
+dependencies {
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.navigation.fragment.ktx
+    implementation libs.androidx.navigation.ui.ktx
+
+    implementation libs.com.google.android.material
+    implementation libs.bundles.coroutines
+    implementation libs.adapter.delegates
+    implementation libs.kotlinx.serialization
+    implementation libs.retrofit.kotlinx.serialization.converter
+    implementation libs.com.squareup.retrofit
+    implementation libs.com.squareup.okhttp3.okhttp
+    implementation libs.com.squareup.okhttp3.logging.interceptor
+    implementation libs.glide
+    annotationProcessor libs.glide.compiler
+    // devtool
+    debugImplementation libs.chucker
+    releaseImplementation libs.chucker.no.op
+}
