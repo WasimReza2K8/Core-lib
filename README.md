@@ -1,4 +1,4 @@
-# Wasim_MVI
+# Core-lib
 It is a generic template for any android project. In this template, I used UDF(Unidirectional Data Flow)+MVVM  architecture with clean architecture
 approach in each module. In MVI (Model, View, Intent) architecture user interaction regard as event (or user intent)
 that change the model which represents UI state. ViewModel is responsible for creating immutable state
