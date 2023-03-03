@@ -4,11 +4,11 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.repeatOnLifecycle
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.FlowCollector
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-fun <T> StateFlow<T>.lifecycleObserver(
+fun <T> Flow<T>.lifecycleObserver(
     lifecycleCoroutineScope: LifecycleCoroutineScope,
     lifecycleOwner: LifecycleOwner,
     collector: FlowCollector<T>,
