@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.launch
 
-fun <T> Flow<T>.lifecycleObserver(
+fun <T> Flow<T>.lifecycleAwareCollect(
     lifecycleCoroutineScope: LifecycleCoroutineScope,
     lifecycleOwner: LifecycleOwner,
     collector: FlowCollector<T>,
